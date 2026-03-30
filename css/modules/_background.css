@@ -1,0 +1,71 @@
+/* ============================================
+   BACKGROUND — STARFIELD + GALAXY ORBS
+   ============================================ */
+
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  background-image:
+    radial-gradient(1px 1px at 10% 15%, rgba(255,255,255,0.9) 0%, transparent 100%),
+    radial-gradient(1px 1px at 25% 60%, rgba(255,255,255,0.7) 0%, transparent 100%),
+    radial-gradient(1.5px 1.5px at 40% 30%, rgba(255,255,255,0.8) 0%, transparent 100%),
+    radial-gradient(1px 1px at 55% 80%, rgba(255,255,255,0.6) 0%, transparent 100%),
+    radial-gradient(2px 2px at 70% 20%, rgba(255,255,255,0.9) 0%, transparent 100%),
+    radial-gradient(1px 1px at 80% 55%, rgba(255,255,255,0.7) 0%, transparent 100%),
+    radial-gradient(1.5px 1.5px at 90% 40%, rgba(255,255,255,0.8) 0%, transparent 100%),
+    radial-gradient(1px 1px at 15% 85%, rgba(255,255,255,0.6) 0%, transparent 100%),
+    radial-gradient(1px 1px at 35% 10%, rgba(255,255,255,0.9) 0%, transparent 100%),
+    radial-gradient(2px 2px at 60% 50%, rgba(200,180,255,0.8) 0%, transparent 100%),
+    radial-gradient(1px 1px at 75% 75%, rgba(255,255,255,0.7) 0%, transparent 100%),
+    radial-gradient(1.5px 1.5px at 5%  45%, rgba(255,255,255,0.8) 0%, transparent 100%),
+    radial-gradient(1px 1px at 48% 92%, rgba(255,255,255,0.6) 0%, transparent 100%),
+    radial-gradient(1px 1px at 88% 88%, rgba(200,220,255,0.9) 0%, transparent 100%),
+    radial-gradient(1px 1px at 20% 38%, rgba(255,255,255,0.5) 0%, transparent 100%),
+    radial-gradient(2px 2px at 65% 8%,  rgba(255,255,255,0.8) 0%, transparent 100%),
+    radial-gradient(1px 1px at 50% 65%, rgba(255,200,255,0.7) 0%, transparent 100%),
+    radial-gradient(1px 1px at 30% 72%, rgba(255,255,255,0.6) 0%, transparent 100%),
+    radial-gradient(1.5px 1.5px at 85% 12%, rgba(255,255,255,0.9) 0%, transparent 100%),
+    radial-gradient(1px 1px at 42% 48%, rgba(255,255,255,0.5) 0%, transparent 100%);
+  pointer-events: none;
+}
+
+.ambient {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.ambient-orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(100px);
+}
+
+.ambient-orb-1 {
+  width: 800px; height: 800px;
+  background: radial-gradient(circle, rgba(129,140,248,0.3) 0%, transparent 65%);
+  top: -250px; left: -250px;
+  animation: drift1 14s ease-in-out infinite;
+}
+
+.ambient-orb-2 {
+  width: 600px; height: 600px;
+  background: radial-gradient(circle, rgba(244,114,182,0.25) 0%, transparent 65%);
+  bottom: 0%; right: -150px;
+  animation: drift2 18s ease-in-out infinite;
+}
+
+.ambient-orb-3 {
+  width: 500px; height: 500px;
+  background: radial-gradient(circle, rgba(34,211,238,0.2) 0%, transparent 65%);
+  top: 40%; left: 50%;
+  animation: drift3 22s ease-in-out infinite;
+}
+
+@keyframes drift1 { 0%,100%{transform:translate(0,0)} 50%{transform:translate(70px,55px)} }
+@keyframes drift2 { 0%,100%{transform:translate(0,0)} 50%{transform:translate(-55px,-40px)} }
+@keyframes drift3 { 0%,100%{transform:translate(0,0)} 50%{transform:translate(40px,-65px)} }

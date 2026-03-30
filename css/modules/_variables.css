@@ -1,0 +1,47 @@
+/* ============================================
+   VARIABLES & RESET
+   ============================================ */
+
+:root {
+  --bg:        #05050f;
+  --bg2:       #080818;
+  --bg3:       #0c0c22;
+
+  --surface:   rgba(255, 255, 255, 0.04);
+  --surface2:  rgba(255, 255, 255, 0.08);
+
+  --accent:    #818cf8;
+  --accent2:   #a5b4fc;
+  --accent3:   #c7d2fe;
+
+  --pink:      #f472b6;
+  --pink2:     #fbcfe8;
+  --cyan:      #22d3ee;
+  --cyan2:     #67e8f9;
+  --gold:      #fbbf24;
+
+  --text:      #f0f0ff;
+  --muted:     #8b85b0;
+  --muted2:    #5c5880;
+
+  --border:    rgba(129, 140, 248, 0.18);
+  --border2:   rgba(129, 140, 248, 0.4);
+
+  --glow-v:    rgba(129, 140, 248, 0.6);
+  --glow-p:    rgba(244, 114, 182, 0.5);
+  --glow-c:    rgba(34, 211, 238, 0.5);
+
+  --radius:    16px;
+  --radius-sm: 10px;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+  overflow-x: hidden;
+}

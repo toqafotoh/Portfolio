@@ -22,11 +22,11 @@ function initScrollReveal() {
 var projectMedia = {
 
   inventory: [
-    { type: 'image', src: 'assets/projects/inventory/Screenshot 2026-02-17 220243.png', alt: 'Inventory dashboard' },
-    { type: 'image', src: 'assets/projects/inventory/Screenshot 2026-02-17 220939.png', alt: 'Inventory view' },
-    { type: 'image', src: 'assets/projects/inventory/Screenshot 2026-02-17 221204.png', alt: 'Inventory view' },
-    { type: 'image', src: 'assets/projects/inventory/Screenshot 2026-02-17 221552.png', alt: 'Inventory view' },
-    { type: 'image', src: 'assets/projects/inventory/Screenshot 2026-02-17 222602.png', alt: 'Inventory view' },
+    { type: 'image', src: 'assets/projects/inventory/Screenshot 2026-02-17 220939.png', alt: 'Inventory home page' },
+    { type: 'image', src: 'assets/projects/inventory/Screenshot 2026-02-17 221204.png', alt: 'Inventory dashboard' },
+    { type: 'image', src: 'assets/projects/inventory/Screenshot 2026-02-17 222602.png', alt: 'Inventory products' },
+    { type: 'image', src: 'assets/projects/inventory/Screenshot 2026-02-17 221552.png', alt: 'Inventory stock operations' },
+    { type: 'image', src: 'assets/projects/inventory/Screenshot 2026-02-17 220243.png', alt: 'Inventory restock' },
     { type: 'video', src: 'assets/videos/inventory/inventory.mp4' }
   ],
 

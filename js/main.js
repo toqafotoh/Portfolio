@@ -296,7 +296,51 @@ function buildSlider(card) {
     dot.addEventListener('click', function() { goTo(parseInt(dot.getAttribute('data-index'))); });
   });
 
+  /* Swipe / drag between slides (touch, pen and mouse). Vertical scrolling stays native. */
+  var swipe = null, justDragged = false;
+  if (total > 1) {
+    container.style.touchAction = 'pan-y';
+    container.addEventListener('dragstart', function(e) { e.preventDefault(); });
+    container.addEventListener('pointerdown', function(e) {
+      if (e.pointerType === 'mouse' && e.button !== 0) return;
+      if (e.target.closest('video, iframe, .media-btn, .media-dots')) return;
+      swipe = { id: e.pointerId, x: e.clientX, y: e.clientY, dx: 0, active: false, w: container.clientWidth || 1 };
+    });
+    container.addEventListener('pointermove', function(e) {
+      if (!swipe || e.pointerId !== swipe.id) return;
+      var dx = e.clientX - swipe.x, dy = e.clientY - swipe.y;
+      if (!swipe.active) {
+        if (Math.abs(dx) < 8 && Math.abs(dy) < 8) return;
+        if (Math.abs(dy) > Math.abs(dx)) { swipe = null; return; }
+        swipe.active = true;
+        track.style.transition = 'none';
+        try { container.setPointerCapture(e.pointerId); } catch (err) {}
+      }
+      swipe.dx = dx;
+      track.style.transform = 'translateX(calc(-' + (currentIndex * 100) + '% + ' + dx + 'px))';
+    });
+    function endSwipe(e, cancelled) {
+      if (!swipe || e.pointerId !== swipe.id) return;
+      var s = swipe; swipe = null;
+      if (!s.active) return;
+      track.style.transition = '';
+      justDragged = true;
+      setTimeout(function() { justDragged = false; }, 60);
+      var threshold = Math.max(40, s.w * 0.15);
+      if (!cancelled && Math.abs(s.dx) > threshold) {
+        var next = currentIndex + (s.dx < 0 ? 1 : -1);
+        if (next < 0 || next >= total) next = currentIndex;
+        goTo(next);
+      } else {
+        goTo(currentIndex);
+      }
+    }
+    container.addEventListener('pointerup', function(e) { endSwipe(e, false); });
+    container.addEventListener('pointercancel', function(e) { endSwipe(e, true); });
+  }
+
   container.addEventListener('click', function(e) {
+    if (justDragged) return;
     var trigger = e.target.closest('.lb-trigger, .media-slide');
     if (!trigger || lightboxItems.length === 0) return;
     var lbIdx = parseInt(trigger.getAttribute('data-lb-index'));

@@ -1,7 +1,8 @@
 :root{--bg:#f6f4ef;--bg3:#ece9e1;--surface:#fff;--text:#1b1c21;--muted:#5b5e6c;--muted2:#8b8e9b;--border:rgba(27,28,33,.12);--accent:#0f6b63;--accent2:#0f6b63;--accent-b:#b8612b;--soft:rgba(15,107,99,.08);--glow:rgba(15,107,99,.08);--nav:rgba(246,244,239,.85);--shadow:0 1px 2px rgba(20,20,30,.05),0 14px 34px -14px rgba(20,20,30,.16);--radius:16px;--radius-sm:10px}
 [data-theme=dark]{--bg:#0d1014;--bg3:#12161c;--surface:#151a21;--text:#eceef2;--muted:#a0a7b5;--muted2:#6f7684;--border:rgba(255,255,255,.1);--accent:#5eead4;--accent2:#5eead4;--accent-b:#f0a56b;--soft:rgba(94,234,212,.09);--glow:rgba(94,234,212,.07);--nav:rgba(13,16,20,.85);--shadow:0 1px 2px rgba(0,0,0,.4),0 18px 40px -18px rgba(0,0,0,.7)}
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth;scroll-padding-top:70px}
+html{scroll-behavior:smooth;scroll-padding-top:70px;overflow-x:hidden}
+@supports(overflow:clip){html,body{overflow-x:clip}}
 body{font-family:'Manrope',system-ui,sans-serif;background:var(--bg);color:var(--text);line-height:1.65;overflow-x:hidden;-webkit-font-smoothing:antialiased}
 body::before{content:'';position:fixed;inset:0;z-index:-1;pointer-events:none;background:radial-gradient(60% 45% at 50% 0,var(--glow),transparent 70%)}
 html.tt *{transition:background-color .5s ease,color .5s ease,border-color .5s ease,box-shadow .5s ease!important}
@@ -164,3 +165,6 @@ footer{border-top:1px solid var(--border);padding:2rem 0;text-align:center;color
 .vol-card ul{list-style:none;display:flex;flex-direction:column;gap:6px}
 .vol-card li{font-size:.86rem;color:var(--muted);padding-left:16px;position:relative}
 .vol-card li::before{content:'';position:absolute;left:0;top:.8em;width:7px;height:1px;background:var(--accent)}
+
+/* Personal brand mark, keeping the name readable. */
+.nav-logo{display:inline-flex;align-items:center;gap:.55rem}.nav-logo img{display:block;flex:none}[data-theme=dark] .nav-logo img{filter:brightness(0) saturate(100%) invert(88%) sepia(21%) saturate(1046%) hue-rotate(107deg) brightness(97%) contrast(90%)}

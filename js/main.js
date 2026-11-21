@@ -22,8 +22,8 @@ function initScrollReveal() {
 var projectMedia = {
 
   inventory: [
-    { type: 'image', src: 'assets/projects/inventory/Screenshot 2026-02-17 220939.png', alt: 'Inventory home page' },
     { type: 'image', src: 'assets/projects/inventory/Screenshot 2026-02-17 221204.png', alt: 'Inventory dashboard' },
+    { type: 'image', src: 'assets/projects/inventory/Screenshot 2026-02-17 220939.png', alt: 'Inventory home page' },
     { type: 'image', src: 'assets/projects/inventory/Screenshot 2026-02-17 222602.png', alt: 'Inventory products' },
     { type: 'image', src: 'assets/projects/inventory/Screenshot 2026-02-17 221552.png', alt: 'Inventory stock operations' },
     { type: 'image', src: 'assets/projects/inventory/Screenshot 2026-02-17 220243.png', alt: 'Inventory restock' },
@@ -142,7 +142,17 @@ function lightboxGo(index) {
     var oldVid2 = wrap.querySelector('video');
     if (oldVid2) { oldVid2.pause(); wrap.innerHTML = ''; wrap.appendChild(lightbox.img); }
     lightbox.img.style.display = '';
-    lightbox.img.src = src;
+    var optimized = portfolioImages[src];
+    lightbox.img.loading = 'eager';
+    lightbox.img.decoding = 'async';
+    lightbox.img.sizes = '100vw';
+    if (optimized) lightbox.img.srcset = optimized.srcset;
+    else lightbox.img.removeAttribute('srcset');
+    lightbox.img.src = optimized ? optimized.src : src;
+    [-1, 1].forEach(function(offset) {
+      var neighbor = lightbox.images[(lightbox.index + offset + total) % total];
+      if (neighbor && neighbor.type === 'image') warmImage(neighbor.src, '100vw');
+    });
   }
 
   lightbox.counter.textContent = (lightbox.index + 1) + ' / ' + total;
@@ -151,6 +161,20 @@ function lightboxGo(index) {
   });
 }
 
+
+/* Keep only nearby screenshots ready, never preload videos or PDFs. */
+var warmedImages = {};
+function warmImage(src, sizes) {
+  var key = src + sizes;
+  if (warmedImages[key]) return;
+  var optimized = portfolioImages[src];
+  var img = new Image();
+  img.decoding = 'async';
+  img.sizes = sizes;
+  if (optimized) img.srcset = optimized.srcset;
+  img.src = optimized ? optimized.src : src;
+  warmedImages[key] = img;
+}
 
 /* ── Slider Builder ── */
 var expandIcon =
@@ -233,14 +257,22 @@ function buildSlider(card) {
     var slide = track.children[index];
     if (!slide) return;
     slide.querySelectorAll('[data-src]').forEach(function(el) {
+      if (el.tagName === 'IMG') el.loading = 'eager';
       if (el.dataset.srcset) { el.srcset = el.dataset.srcset; el.removeAttribute('data-srcset'); }
       el.src = el.dataset.src; el.removeAttribute('data-src');
       if (el.tagName === 'SOURCE') el.parentElement.load();
     });
   }
+  function prepareNeighbors() {
+    [-1, 1].forEach(function(offset) {
+      var index = (currentIndex + offset + total) % total;
+      if (mediaList[index].type === 'image') hydrate(index);
+    });
+  }
   var mediaObserver = new IntersectionObserver(function(entries) {
     if (entries.some(function(e) { return e.isIntersecting; })) {
       hydrate(currentIndex);
+      prepareNeighbors();
       mediaObserver.disconnect();
     }
   }, { rootMargin: '500px 0px' });
@@ -250,6 +282,7 @@ function buildSlider(card) {
     currentIndex = (index + total) % total;
     container.querySelectorAll("video").forEach(function(v) { v.pause(); });
     hydrate(currentIndex);
+    prepareNeighbors();
     track.style.transform = 'translateX(-' + (currentIndex * 100) + '%)';
     dots.forEach(function(dot, i) { dot.classList.toggle('active', i === currentIndex); });
   }
@@ -271,7 +304,25 @@ function buildSlider(card) {
   });
 }
 
+var mediaOrderApplied = false;
 function initSliders() {
+  // extra.js supplies these lists before DOMContentLoaded.
+  if (!mediaOrderApplied) {
+    if (projectMedia.edutech) {
+      projectMedia.edutech = projectMedia.edutech.filter(function(item) {
+        return item.type === 'image';
+      }).reverse().concat(projectMedia.edutech.filter(function(item) {
+        return item.type !== 'image';
+      }));
+    }
+    if (projectMedia.furniture && projectMedia.furniture.length === 6) {
+      var furniture = projectMedia.furniture;
+      projectMedia.furniture = [2, 3, 4, 5, 0, 1].map(function(index) {
+        return furniture[index];
+      });
+    }
+    mediaOrderApplied = true;
+  }
   document.querySelectorAll('.project-card[data-project]').forEach(buildSlider);
 }
 

@@ -1,3 +1,5 @@
+var portfolioImages = {"assets/projects/clinic/Clinic Dashboard.png":{"width":1920,"height":863,"src":"assets/projects/11-portfolio-shot-01.webp","srcset":"assets/projects/12-portfolio-shot-02.webp 640w, assets/projects/11-portfolio-shot-01.webp 1000w"},"assets/projects/clinic/Doctor Search.png":{"width":1743,"height":866,"src":"assets/projects/13-portfolio-shot-03.webp","srcset":"assets/projects/14-portfolio-shot-04.webp 640w, assets/projects/13-portfolio-shot-03.webp 1000w"},"assets/projects/clinic/MedLink (1).png":{"width":1859,"height":925,"src":"assets/projects/15-portfolio-shot-05.webp","srcset":"assets/projects/16-portfolio-shot-06.webp 640w, assets/projects/15-portfolio-shot-05.webp 1000w"},"assets/projects/clinic/Sign_Up.png":{"width":1734,"height":867,"src":"assets/projects/17-portfolio-shot-07.webp","srcset":"assets/projects/18-portfolio-shot-08.webp 640w, assets/projects/17-portfolio-shot-07.webp 1000w"},"assets/projects/clinic/login_clinic.png":{"width":1838,"height":921,"src":"assets/projects/19-portfolio-shot-09.webp","srcset":"assets/projects/20-portfolio-shot-10.webp 640w, assets/projects/19-portfolio-shot-09.webp 1000w"},"assets/projects/edutech/Screenshot 2026-11-19 074825.png":{"width":1467,"height":782,"src":"assets/projects/21-portfolio-shot-11.webp","srcset":"assets/projects/22-portfolio-shot-12.webp 640w, assets/projects/21-portfolio-shot-11.webp 1000w"},"assets/projects/edutech/Screenshot 2026-11-19 074857.png":{"width":1538,"height":808,"src":"assets/projects/23-portfolio-shot-13.webp","srcset":"assets/projects/24-portfolio-shot-14.webp 640w, assets/projects/23-portfolio-shot-13.webp 1000w"},"assets/projects/edutech/Screenshot 2026-11-19 074912.png":{"width":1497,"height":822,"src":"assets/projects/25-portfolio-shot-15.webp","srcset":"assets/projects/26-portfolio-shot-16.webp 640w, assets/projects/25-portfolio-shot-15.webp 1000w"},"assets/projects/edutech/Screenshot 2026-11-19 074931.png":{"width":1838,"height":816,"src":"assets/projects/27-portfolio-shot-17.webp","srcset":"assets/projects/28-portfolio-shot-18.webp 640w, assets/projects/27-portfolio-shot-17.webp 1000w"},"assets/projects/edutech/Screenshot 2026-11-19 075000.png":{"width":1780,"height":792,"src":"assets/projects/29-portfolio-shot-19.webp","srcset":"assets/projects/30-portfolio-shot-20.webp 640w, assets/projects/29-portfolio-shot-19.webp 1000w"},"assets/projects/furniture/image(1).png":{"width":670,"height":324,"src":"assets/projects/31-portfolio-shot-21.webp","srcset":"assets/projects/32-portfolio-shot-22.webp 640w, assets/projects/31-portfolio-shot-21.webp 670w"},"assets/projects/furniture/image(2).png":{"width":1133,"height":527,"src":"assets/projects/33-portfolio-shot-23.webp","srcset":"assets/projects/34-portfolio-shot-24.webp 640w, assets/projects/33-portfolio-shot-23.webp 1000w"},"assets/projects/furniture/image(3).png":{"width":1100,"height":515,"src":"assets/projects/35-portfolio-shot-25.webp","srcset":"assets/projects/36-portfolio-shot-26.webp 640w, assets/projects/35-portfolio-shot-25.webp 1000w"},"assets/projects/furniture/image(4).png":{"width":1068,"height":595,"src":"assets/projects/37-portfolio-shot-27.webp","srcset":"assets/projects/38-portfolio-shot-28.webp 640w, assets/projects/37-portfolio-shot-27.webp 1000w"},"assets/projects/furniture/image(6).png":{"width":1099,"height":586,"src":"assets/projects/39-portfolio-shot-29.webp","srcset":"assets/projects/40-portfolio-shot-30.webp 640w, assets/projects/39-portfolio-shot-29.webp 1000w"},"assets/projects/furniture/image.png":{"width":706,"height":287,"src":"assets/projects/41-portfolio-shot-31.webp","srcset":"assets/projects/42-portfolio-shot-32.webp 640w, assets/projects/41-portfolio-shot-31.webp 706w"},"assets/projects/inventory/Screenshot 2026-02-17 220243.png":{"width":1919,"height":824,"src":"assets/projects/43-portfolio-shot-33.webp","srcset":"assets/projects/44-portfolio-shot-34.webp 640w, assets/projects/43-portfolio-shot-33.webp 1000w"},"assets/projects/inventory/Screenshot 2026-02-17 220939.png":{"width":1918,"height":834,"src":"assets/projects/45-portfolio-shot-35.webp","srcset":"assets/projects/46-portfolio-shot-36.webp 640w, assets/projects/45-portfolio-shot-35.webp 1000w"},"assets/projects/inventory/Screenshot 2026-02-17 221204.png":{"width":1919,"height":824,"src":"assets/projects/47-portfolio-shot-37.webp","srcset":"assets/projects/48-portfolio-shot-38.webp 640w, assets/projects/47-portfolio-shot-37.webp 1000w"},"assets/projects/inventory/Screenshot 2026-02-17 221552.png":{"width":1919,"height":831,"src":"assets/projects/49-portfolio-shot-39.webp","srcset":"assets/projects/50-portfolio-shot-40.webp 640w, assets/projects/49-portfolio-shot-39.webp 1000w"},"assets/projects/inventory/Screenshot 2026-02-17 222602.png":{"width":1919,"height":819,"src":"assets/projects/51-portfolio-shot-41.webp","srcset":"assets/projects/52-portfolio-shot-42.webp 640w, assets/projects/51-portfolio-shot-41.webp 1000w"},"assets/projects/ner/GuiScreeenshot.jpg":{"width":1280,"height":615,"src":"assets/projects/53-portfolio-shot-43.webp","srcset":"assets/projects/54-portfolio-shot-44.webp 640w, assets/projects/53-portfolio-shot-43.webp 1000w"},"assets/projects/skincare/Screenshot 2026-02-18 180005.png":{"width":1917,"height":870,"src":"assets/projects/55-portfolio-shot-45.webp","srcset":"assets/projects/56-portfolio-shot-46.webp 640w, assets/projects/55-portfolio-shot-45.webp 1000w"},"assets/projects/skincare/Screenshot 2026-02-18 180045.png":{"width":1915,"height":867,"src":"assets/projects/57-portfolio-shot-47.webp","srcset":"assets/projects/58-portfolio-shot-48.webp 640w, assets/projects/57-portfolio-shot-47.webp 1000w"},"assets/projects/skincare/Screenshot 2026-02-18 180107.png":{"width":1917,"height":852,"src":"assets/projects/59-portfolio-shot-49.webp","srcset":"assets/projects/60-portfolio-shot-50.webp 640w, assets/projects/59-portfolio-shot-49.webp 1000w"},"assets/projects/skincare/Screenshot 2026-02-18 180134.png":{"width":1917,"height":861,"src":"assets/projects/61-portfolio-shot-51.webp","srcset":"assets/projects/62-portfolio-shot-52.webp 640w, assets/projects/61-portfolio-shot-51.webp 1000w"},"assets/projects/skincare/Screenshot 2026-02-18 180212.png":{"width":1919,"height":863,"src":"assets/projects/63-portfolio-shot-53.webp","srcset":"assets/projects/64-portfolio-shot-54.webp 640w, assets/projects/63-portfolio-shot-53.webp 1000w"},"assets/projects/skincare/Screenshot 2026-02-18 180243.png":{"width":1918,"height":866,"src":"assets/projects/65-portfolio-shot-55.webp","srcset":"assets/projects/66-portfolio-shot-56.webp 640w, assets/projects/65-portfolio-shot-55.webp 1000w"},"assets/projects/skincare/Screenshot 2026-02-18 180303.png":{"width":1919,"height":841,"src":"assets/projects/67-portfolio-shot-57.webp","srcset":"assets/projects/68-portfolio-shot-58.webp 640w, assets/projects/67-portfolio-shot-57.webp 1000w"}};
+
 
 /* ── Scroll Reveal ── */
 function initScrollReveal() {
@@ -175,19 +177,20 @@ function buildSlider(card) {
 
   mediaList.forEach(function(item) {
     var lbIdx = lightboxItems.findIndex(function(x) { return x.src === item.src; });
+    var optimized = (window.portfolioImages || {})[item.src];
 
     if (item.type === 'image') {
       trackHTML +=
         '<div class="media-slide-wrap">'
-      +   '<img class="media-slide" src="' + item.src + '" alt="' + (item.alt || '') + '" loading="lazy" data-lb-index="' + lbIdx + '">'
+      +   '<img class="media-slide" data-src="' + (optimized ? optimized.src : item.src) + '"' + (optimized ? ' data-srcset="' + optimized.srcset + '" sizes="(max-width: 767px) 100vw, 550px" width="' + optimized.width + '" height="' + optimized.height + '"' : '') + ' alt="' + (item.alt || '') + '" decoding="async" loading="lazy" data-lb-index="' + lbIdx + '">'
       +   '<button class="lb-trigger" aria-label="View fullscreen" data-lb-index="' + lbIdx + '">' + expandIcon + '</button>'
       + '</div>';
 
     } else if (item.type === 'video') {
       trackHTML +=
         '<div class="media-slide-video" style="position:relative;">'
-      +   '<video controls preload="metadata">'
-      +     '<source src="' + item.src + '" type="video/mp4">'
+      +   '<video controls preload="none">'
+      +     '<source data-src="' + item.src + '" type="video/mp4">'
       +   '</video>'
       +   '<button class="lb-trigger" aria-label="View fullscreen" data-lb-index="' + lbIdx + '" style="top:10px;right:10px;">' + expandIcon + '</button>'
       + '</div>';
@@ -195,7 +198,7 @@ function buildSlider(card) {
     } else if (item.type === 'pdf') {
       trackHTML +=
         '<div class="media-slide-pdf">'
-      +   '<iframe src="' + item.src + '#toolbar=0&navpanes=0" class="pdf-iframe" title="Project PDF" loading="lazy"></iframe>'
+      +   '<iframe data-src="' + item.src + '#toolbar=0&navpanes=0" class="pdf-iframe" title="Project PDF" loading="lazy"></iframe>'
       + '</div>';
     }
   });
@@ -226,8 +229,27 @@ function buildSlider(card) {
   var track        = container.querySelector('.media-track');
   var dots         = container.querySelectorAll('.media-dot');
 
+  function hydrate(index) {
+    var slide = track.children[index];
+    if (!slide) return;
+    slide.querySelectorAll('[data-src]').forEach(function(el) {
+      if (el.dataset.srcset) { el.srcset = el.dataset.srcset; el.removeAttribute('data-srcset'); }
+      el.src = el.dataset.src; el.removeAttribute('data-src');
+      if (el.tagName === 'SOURCE') el.parentElement.load();
+    });
+  }
+  var mediaObserver = new IntersectionObserver(function(entries) {
+    if (entries.some(function(e) { return e.isIntersecting; })) {
+      hydrate(currentIndex);
+      mediaObserver.disconnect();
+    }
+  }, { rootMargin: '500px 0px' });
+  mediaObserver.observe(card);
+
   function goTo(index) {
     currentIndex = (index + total) % total;
+    container.querySelectorAll("video").forEach(function(v) { v.pause(); });
+    hydrate(currentIndex);
     track.style.transform = 'translateX(-' + (currentIndex * 100) + '%)';
     dots.forEach(function(dot, i) { dot.classList.toggle('active', i === currentIndex); });
   }
